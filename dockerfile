@@ -1,6 +1,5 @@
 # Dockerfile
 
-#FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
 FROM ultralytics/ultralytics:latest-cpu
 
 EXPOSE 8080

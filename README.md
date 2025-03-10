@@ -64,6 +64,9 @@ WHEIGHT_DECAY: 0.0005 penalizza pesi con numeri elevati per prevenire l'overfitt
 Raggiunti i risultati sperati su validation set si utilizza il modello sul test per poi trarne le conclusioni
 
 ### RISULTATI SUL TEST
+
+Si consideri che le metriche di riferimento del dataset RoboFlow non indicano quale modello è stato utilizzato e che i risultati sono stati raggiunti con l'utilizzo del modello più piccolo ovvero quello NANO
+
 | METRICA | SIGNIFICATO | RISULTATI | RIFERIMENTO ROBOFLOW |
 |:---:|:---:|:---:|:---:|
 | mAP50 | precisione media calcolata con una soglia di intersezione su unione (IoU) pari a 0,50 | | 97.6% |
@@ -76,4 +79,9 @@ Raggiunti i risultati sperati su validation set si utilizza il modello sul test 
 
 Grazie alla libreria streamlit si crea una semplice app web per caricare e visualizzare in tempo reale i risultati delle predizioni 
 
-    streamlit run .\src\streamlit_app.py 
+#### UTILIZZO DOCKER
+Posizionarsi nella directory desiderate ed eseguire i seguenti passi:
+1. git clone https://github.com/Matcap97/OBJECT_DETECTION.git
+2. docker build -t streamlit . 
+3. docker run -p 8080:8080 streamlit
+4. accedere ad uno dei link stampati nel terminale per aprire la WebApp
