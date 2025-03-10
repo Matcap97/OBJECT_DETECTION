@@ -1,5 +1,4 @@
 import streamlit as st
-import cv2
 import os
 import numpy as np
 from PIL import Image
@@ -20,7 +19,8 @@ st.title("WebAPP OBJECT DETECTION")
 model_selected = model_selector()
 
 descrizione = {'yolo11n.pt': ['YOLO v11 NANO','rilevamento 80 classi del dataset COCO','le 80 classi in essa'],
-               'yolo11s.pt': ['YOLO v11 SMALL','rilevamento 80 classi del dataset COCO','le 80 classi in essa']
+               'yolo11s.pt': ['YOLO v11 SMALL','rilevamento 80 classi del dataset COCO','le 80 classi in essa'],
+               'rilevatore_targhe.pt': ['YOLO v11 NANO custom per rilevamento targhe','rilevamento targhe autoveicoli','le targhe degli autoveicoli']
                }
 
 if os.path.exists(f"./models/{model_selected}") and model_selected!=None:
